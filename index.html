@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="Form1">
+            <h3>Informacion de cuenta</h3>
+            <input type="correo" placeholder="Direccion de email">
+            <input type="contraseña" placeholder="Contraseña">
+            <div class="btn-box">
+                <button type="button" id="Next1">Siguiente</button>
+            </div>
+        </form>
+
+        <form id="Form2">
+            <h3>Redes Sociales</h3>
+            <input type="text" placeholder="Medium">
+            <input type="text" placeholder="Github">
+            <input type="text" placeholder="Linkedin">
+            <div class="btn-box">
+                <button type="button" id="Back1">Regresar</button>
+                <button type="button" id="Next2">Siguiente</button>
+            </div>
+        </form>
+
+        <form id="Form3">
+            <h3>Informacion Personal</h3>
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+            <input type="text" placeholder="Telefono" required>
+            <div class="btn-box">
+                <button type="button" id="Back2">Regresar</button>
+                <button type="button">Confirmar</button>
+            </div>
+        </form>
+
+        <dvi class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>Paso 1</small></div>
+            <div class="step-col"><small>Paso 2</small></div>
+            <div class="step-col"><small>Paso 3</small></div>
+        </dvi>
+
+    </div>
+    <script>
+        var Form1 = document.getElementById("Form1");
+        var Form2 = document.getElementById("Form2");
+        var Form3 = document.getElementById("Form3");
+
+        var Next1 = document.getElementById("Next1");
+        var Next2 = document.getElementById("Next2");
+        var Back1 = document.getElementById("Back1");
+        var Back2 = document.getElementById("Back2");
+
+        var progress = document.getElementById("progress");
+
+        Next1.onclick = function () {
+            Form1.style.left = "-450px";
+            Form2.style.left = "40px";
+            progress.style.width = "240px";
+        }
+        Back1.onclick = function () {
+            Form1.style.left = "40px";
+            Form2.style.left = "-450px";
+            progress.style.width = "120px";
+        }
+        Next2.onclick = function () {
+            Form2.style.left = "-450px";
+            Form3.style.left = "40px";
+            progress.style.width = "360px";
+        }
+        Back2.onclick = function () {
+            Form2.style.left = "40px";
+            Form3.style.left = "-450px";
+            progress.style.width = "240px";
+        }
+    </script>
+</body>
+
+</html>
